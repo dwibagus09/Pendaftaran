@@ -16,7 +16,7 @@ if(isset($_POST["submit"])){
 
     //[name] => Ahmad [address] => Jakarta [gender] => female [prop] => 17 [kota] => 1701 [kec] => 170108 [kel] => 1701082001 [phone] => +6282240063030 [email] => dedimu@gmail.com [course] => OUTLET-WARKOP [info] => test
 
-    if($_POST["name"]==""||$_POST["address"]==""||$_POST["gender"]==""||$_POST["prop"]=="" || $_POST["kota"]=="" || $_POST["kec"]=="" || $_POST["kel"]=="" || $_POST["phone"]=="" || $_POST["email"]=="" || $_POST["course"]=="" ){
+    if($_POST["name"]==""||$_POST["address"]==""||$_POST["gender"]==""||$_POST["prop"]=="" || $_POST["kota"]=="" || $_POST["kec"]=="" || $_POST["kel"]=="" || $_POST["phone"]=="" || $_POST["email"]=="" ){
     
         //echo "Silakan isi data semuanya ya ... ";
         disp_err();
@@ -31,10 +31,10 @@ if(isset($_POST["submit"])){
     //    $db_dsn = "mysql:dbname=$dbname;host=$dbhost";
 	
 	
-	    $dbhost ='localhost';
-        $dbuser ='u1098311_barista';
-        $dbpass ='Barista123_';
-        $dbname ='u1098311_barista';
+	    $dbhost = 'localhost';
+        $dbuser = 'root';
+        $dbpass = '';
+        $dbname = 'barista';
 	    $db_dsn = "mysql:dbname=$dbname;host=$dbhost";
 	
         try {
@@ -43,9 +43,9 @@ if(isset($_POST["submit"])){
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //$_POST['name'], $_POST['address'], $_POST['gender'], $_POST['prop'], $_POST['kota'], $_POST['kec'], $_POST['kel'], $_POST['phone'], $_POST['email'], $_POST['course'], $_POST['info'], $_POST['tgllahir'], $_POST['ig'], $_POST['fb'], $_POST['wa']
             $sql = "INSERT INTO formpendaftaran 
-                    (name, address, gender, prop, kota, kec, kel, phone, email, course, info, tgllahir, ig, fb, wa, minat, nkp, wktdaf ) 
+                    (name, address, gender, prop, kota, kec, kel, phone, email,  info, tgllahir, ig, fb, wa, minat, nkp, wktdaf ) 
                     VALUES 
-                    (:name, :address, :gender, :prop, :kota, :kec, :kel, :phone, :email, :course, :info, :tgllahir, :ig, :fb, :wa, :minat, :nkp, :wktdaf)";
+                    (:name, :address, :gender, :prop, :kota, :kec, :kel, :phone, :email, :info, :tgllahir, :ig, :fb, :wa, :minat, :nkp, :wktdaf)";
             
             $stmt = $db->prepare($sql);
             
@@ -58,7 +58,7 @@ if(isset($_POST["submit"])){
             $stmt->bindParam(':kel', $kel);
             $stmt->bindParam(':phone', $phone);
             $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':course', $course);
+            //$stmt->bindParam(':course', $course);
             $stmt->bindParam(':info', $info);
             $stmt->bindParam(':tgllahir', $tgllahir);
             $stmt->bindParam(':ig', $ig);
@@ -77,7 +77,7 @@ if(isset($_POST["submit"])){
             $kel     = $_POST['kel'];
             $phone   = $_POST['phone'];
             $email   = $_POST['email'];
-            $course  = $_POST['course'];
+            //$course  = $_POST['course'];
             $info    = " ";
 			$tgllahir    = $_POST['tgllahir'];
             $ig  = $_POST['ig'];
@@ -303,7 +303,7 @@ if(isset($_POST["submit"])){
                             <input type="text" name="wa" id="wa" placeholder="628xxxxxxxxx" />
 						 </div>
                      
-	                    <div class="form-group">
+	                    <!-- <div class="form-group">
                             <label for="course">Tertarik Pelatihan yang akan diikuti: <font Color=red>*</font></label>
                             <div class="form-select">
                                 <select name="course" id="course">
@@ -319,7 +319,7 @@ if(isset($_POST["submit"])){
                                 </select>
                                 <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
-                        </div>
+                        </div> -->
 						<!--<div class="form-group">
                             <label for="info">Keterangan tambahan : </label>
                             	<textarea name="info" id="info" rows="5" cols="40" value=""></textarea>
