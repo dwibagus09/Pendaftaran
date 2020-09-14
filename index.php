@@ -198,7 +198,7 @@ if(isset($_POST["submit"])){
                                 <span class="check"></span>
                             </div>
                         </div>
-                                <input type="text" name="nkp" id="nkp"/ placeholder="001xxxxxx" style="visibility: hidden;>
+                                <input type="text" name="nkp" id="nkp"/ placeholder="001xxxxxx" style="visibility: hidden";>
                             </div>
                         </div>
                         <div class="form-group">

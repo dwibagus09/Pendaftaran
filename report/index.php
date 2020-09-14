@@ -26,8 +26,8 @@ if (!empty($_POST)) {
 <div class="divD">
 <p>List Nama</p>
 <?php
-//$connection = mysqli_connect("localhost", "root", "", "u1098311_barista"); 
-$connection = mysqli_connect("localhost", "u1098311_barista", "Barista123_","u1098311_barista"); 
+$connection = mysqli_connect("localhost", "root", "", "barista"); 
+//$connection = mysqli_connect("localhost", "u1098311_barista", "Barista123_","u1098311_barista"); 
 
 //$query = mysql_query("select * from formpendaftaran", $connection);
 $query = mysqli_query($connection, "select id,name from formpendaftaran");

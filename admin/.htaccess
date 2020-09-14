@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+DirectoryIndex login.php index.htm index.html index.php
+RewriteRule ^dashboard index.php?halaman=dashboard [NC,L]
+RewriteRule ^pendaftar index.php?halaman=pendaftar [NC,L]
+RewriteRule ^detail?id=([0-9a-zA-Z_-]+) index.php?halaman=detail.php?id=$1  [NC,L]
+
+</IfModule>
